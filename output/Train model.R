@@ -2,6 +2,9 @@ source("https://bioconductor.org/biocLite.R")
 biocLite("rhdf5")
 library(rhdf5)
 #################
+load("~/Desktop/ADS Project#4/Project4_data/lyr.RData")
+data.lyr<-lyr[,-c(2,3,6:30)]
+data.lyr.lda<-data.lyr[,-1]
 files <- dir('~/Desktop/ADS Project#4/Project4_data/data', recursive = T, full.names = T, pattern = '\\.h5$')
 sound.sum<-vector("list",length = length(files))
 for (i in 1:length(files)){
